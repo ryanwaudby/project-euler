@@ -8,10 +8,8 @@ def palindrome?(number)
 end
 
 largest = 0
-
 RANGE.each { |left| RANGE.each { |right|
   calculated = left * right
   largest = calculated if palindrome?(calculated) && (calculated > largest)
 }}
-
 p largest
