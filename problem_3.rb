@@ -4,7 +4,5 @@
 require "prime"
 
 largest = 0
-
 600851475143.prime_division.each { |factors| largest = factors.first if factors.first > largest }
-
 p largest
