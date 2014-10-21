@@ -4,3 +4,5 @@
 sum = 0
 1000.times { |number| sum += number if number % 3 == 0 || number % 5 == 0 }
 p sum
+
+p (1..999).inject(0) { |total, i| total + i }
