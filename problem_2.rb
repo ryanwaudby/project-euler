@@ -2,8 +2,11 @@
 #1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
 #By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
-sequence = [1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
-sequence << sequence[-2] + sequence.last while sequence[-2] + sequence.last <= 4000000
-sum = 0
-sequence.each { |term| sum += term if term.even? }
-p sum
+sequence = [1, 2]
+
+sum_of_events = 2
+while sequence[-2] + sequence[-1] <= 4000000
+  sequence << sequence[-2] + sequence[-1]
+  sum_of_events += sequence[-1] if sequence[-1].even?
+end
+p sum_of_events
