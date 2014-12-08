@@ -17,17 +17,8 @@ class Integer
   end
 end
 
-index = 1000000
-largest_starting_number = 0
-largest_chain = 0
+number_mapped_to_steps = []
 
-while index > 1
-  chain_size = index.amount_of_steps_in_collatz
-  if chain_size > largest_chain
-    largest_chain = chain_size
-    largest_starting_number = index
-  end
-  index -= 1
-end
+(1..1000000).each { |number| number_mapped_to_steps << [number, number.amount_of_steps_in_collatz] }
 
-p largest_starting_number
+p number_mapped_to_steps.sort { |a, b| b[1] <=> a[1] }.first[0]
