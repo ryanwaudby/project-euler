@@ -4,9 +4,8 @@
 
 sequence = [1, 2]
 
-sum_of_events = 2
-while sequence[-2] + sequence[-1] <= 4000000
+while sequence[-2] + sequence[-1] <= 4000000 do
   sequence << sequence[-2] + sequence[-1]
-  sum_of_events += sequence[-1] if sequence[-1].even?
 end
-p sum_of_events
+
+p sequence.inject(0) { |s, i| i.even? ? s += i : s }
