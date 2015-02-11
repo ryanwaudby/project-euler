@@ -24,10 +24,9 @@ INPUT = "
 04 62 98 27 23 09 70 98 73 93 38 53 60 04 23"
 
 array = INPUT.each_line.map { |line| line.strip.split.map(&:to_i) }
+p array
 
 until array.size == 1 do
   max = array.pop.each_cons(2).map(&:max)
   p array[-1] = array[-1].zip(max).map { |row_one, row_two| row_one + row_two }.flatten
 end
-
-p array
